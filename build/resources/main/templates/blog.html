@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Blog Project</title>
+</head>
+<body>
+<h1>"BlogList"</h1>
+<p>The  bloglist is:
+	
+    <span th:text="${bloglist}">Peter</span>
+    </p>
+    <form method="get" action="/read" :href="${/read}" value="read">
+       Title to read the blog: <input type="text" name="title" id="title" value=""/>
+         <button type="submit">Search </button>
+   </form>
+  <form method="get" action="/listAuthor" :href="${/listAuthor}" value="listAuthor">
+       Author whose blogs you want: <input type="text" name="author" id="author" value=""/>
+         <button type="submit">List </button>
+   </form>
+
+</body>
+</html>

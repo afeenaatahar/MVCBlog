@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Blog Project</title>
+</head>
+<body>
+  <form action="/testEntry" method="get">
+       Author: <input type="text" name="author" id="author" value=""/>
+       title: <input type="text" name="title" id="title" value=""/>
+       content: <input type="text" name="content" id="content" value=""/>
+       Submit: <input type="submit" value="Submit"/>
+  </form>
+    
+<h1> <span th:text="${title}">Peter</span></h1>
+
+<p>The  blogEntry id:
+    <span th:text="${id}">Peter</span>
+    </p>
+    <p>Author:
+    <span th:text="${author}">Peter</span>
+    </p>
+    <p>Content:
+    <span th:text="${content}">Peter</span>
+    </p>
+    <p>Comments:
+    <span th:text="${comments}">Peter</span>
+    </p>
+    <p>BlogList:
+    <span th:text="${bloglist}">Peter</span>
+    </p>
+    
+   <form method="get" action="/updateEntry" :href="${/updateEntry}" value="update">
+       old Title: <input type="text" name="oldTitle" id="oldTitle" value=""/>
+        new Title(ignore if you dont want  to change): <input type="text" name="newTitle" id="newTitle" value=""/>
+         new Author(ignore if you dont want  to change): <input type="text" name="newAuthor" id="newAuthor" value=""/>
+          new Content(ignore if you dont want  to change): <input type="text" name="newContent" id="newContent" value=""/>
+         <button type="submit">Update </button>
+   </form>
+   <form method="get" action="/delEntry" :href="${/delEntry}" value="delete">
+       Title 2 Delete Entry: <input type="text" name="title" id="title" value=""/>
+         <button type="submit">Delete </button>
+   </form>
+    <form method="get" action="/addComment" :href="${/addComment}" value="addComment">
+       Title 2 add Comment: <input type="text" name="title" id="title" value=""/>
+        Commenter: <input type="text" name="commenter" id="commenter" value=""/>
+         Comment content: <input type="text" name="commentContent" id="commentContent" value=""/>
+         <button type="submit">Add Comment </button>
+   </form>
+    <form method="get" action="/delComment" :href="${/delComment}" value="delComment">
+       Title of the blog you want  to delete Comment: <input type="text" name="title" id="title" value=""/>
+        Commenter whose comment you want  to delete: <input type="text" name="commenter" id="commenter" value=""/>
+         <button type="submit">Delete Comment </button>
+   </form>
+   <form method="get" action="/updateComment" :href="${/updateComment}" value="update">
+       Title of Blog in which you want to update Comment: <input type="text" name="title" id="title" value=""/>
+        old Commenter(ignore if you dont want  to change): <input type="text" name="oldCommenter" id="oldCommenter" value=""/>
+         new Commenter(ignore if you dont want  to change): <input type="text" name="newCommenter" id="newCommenter" value=""/>
+          new Content(ignore if you dont want  to change): <input type="text" name="newContent" id="newContent" value=""/>
+         <button type="submit">Update Comment </button>
+    
+    
+  
+   
+</body>
+
+</html>
